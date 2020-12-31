@@ -1,6 +1,6 @@
 Creating a new installation package
 ===================================
-
+ 
 When packaging new version to INTEGRAATIOTESTI, session table must be set to "tatu_sessions_sovt".
 This can be set in "fi.liikennevirasto.tatu.model.Process":
 	@Table(name = "tatu_sessions_sovt")
