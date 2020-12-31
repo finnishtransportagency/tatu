@@ -1,0 +1,12 @@
+.metadata/
+.classpath
+.project
+.settings/
+target/
+bin/
+tatu.log*
+Test_data/
+src/test/
+instructions.txt
+src/main/webapp/WEB-INF/jetty-env.xml
+src/main/resources/applicationContext.xml

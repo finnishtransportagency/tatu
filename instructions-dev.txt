@@ -1,0 +1,47 @@
+Creating a new installation package
+===================================
+
+When packaging new version to INTEGRAATIOTESTI, session table must be set to "tatu_sessions_sovt".
+This can be set in "fi.liikennevirasto.tatu.model.Process":
+	@Table(name = "tatu_sessions_sovt")
+All other deployments use a default value:
+	@Table(name = "tatu_sessions")
+
+
+Maven
+===
+mvn package
+---
+
+
+Development environment
+========================
+
+
+JDBC-connection in test
+===
+Environment/Services/Data Sources
+New / Generic Data Source
+
+Name: ********
+JNDI: jdbc/********
+<Next>
+
+Non-XA Driver
+<Next>
+
+Create a new Data Source
+********
+<Next>
+
+Select
+THIN Oracle RAC
+<Next>
+
+Edit string to:
+jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=ON)(FAILOVER=ON)(ADDRESS=(PROTOCOL=TCP)(HOST={db_name})(PORT={db_port}))(ADDRESS=(PROTOCOL=TCP)(HOST={db_name})(PORT={db_port}))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME={service_name})(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC))))
+
+<Test>
+<Next>
+ApplicationServer
+<Finish>

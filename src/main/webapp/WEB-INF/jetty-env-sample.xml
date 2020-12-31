@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+	<New id="ID" class="org.mortbay.jetty.plus.naming.Resource">
+		<Arg>jdbc/DB_ID</Arg>
+		<Arg>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">oracle.jdbc.pool.OracleDataSource</Set>
+				<Set name="url">jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=ON)(FAILOVER=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=port))(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=port))(LOAD_BALANCE=no)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=database_name)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC))))</Set>
+				<Set name="username">username</Set>
+				<Set name="password">password</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>
