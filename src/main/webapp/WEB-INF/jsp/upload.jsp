@@ -18,9 +18,10 @@
 <% } else { %>
 			
 			<h2>Valitse k&auml;ytett&auml;v&auml; tieosoiteverkko</h2>
-			<p><input type="radio" name="tieosoiteverkon_tyyppi" value="viimeisin" checked onClick="this.form.tieosoiteverkon_vuosi.disabled='disabled';"/>Viimeisin: 1.7.2020</p>
+			<p><input type="radio" name="tieosoiteverkon_tyyppi" value="viimeisin" checked onClick="this.form.tieosoiteverkon_vuosi.disabled='disabled';"/>Viimeisin: 1.1.2021</p>
 			<p><input type="radio" name="tieosoiteverkon_tyyppi" value="vanha" onClick="this.form.tieosoiteverkon_vuosi.disabled='';" />Vanha tai muu: 
 			<select name="tieosoiteverkon_vuosi" disabled>
+				<option value="20202">1.7.2020</option>
 				<option value="20201">1.1.2020</option>
 				<option value="20192">14.10.2019</option>
 				<option value="20191">1.7.2019</option>
