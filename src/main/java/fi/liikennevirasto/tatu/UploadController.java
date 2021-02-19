@@ -76,7 +76,7 @@ public class UploadController {
         		String sessionId = getSessionId(request);
 	        	
         		if (tieosoiteverkonVuosi == null) // Jos k‰ytet‰‰n viimeisint‰
-        			tieosoiteverkonVuosi = new Integer(20202);
+        			tieosoiteverkonVuosi = new Integer(20211);
         	
         		mainControlService.setVuosi(tieosoiteverkonVuosi);
         		logger.debug("K‰ytet‰‰n vuoden " + tieosoiteverkonVuosi + " tieosoiteverkkoa.");

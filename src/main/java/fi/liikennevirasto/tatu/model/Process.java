@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name = "tatu_sessions_sovt")
-@Table(name = "tatu_sessions")
+@Table(name = "tatu_sessions_sovt")
+//@Table(name = "tatu_sessions")
 public class Process implements Serializable {
 
 	private static final long serialVersionUID = 8722525151509394998L;
