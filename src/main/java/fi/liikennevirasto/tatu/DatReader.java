@@ -10,6 +10,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.geotools.feature.SchemaException;
 
+import com.vividsolutions.jts.io.ParseException;
+
 import fi.liikennevirasto.tatu.service.OsoiteverkkoService;
 
 public class DatReader implements TatuReader {
@@ -24,7 +26,7 @@ public class DatReader implements TatuReader {
 	
 	public ReaderResponse readFile(OsoiteverkkoService osoiteverkkoService, File datFile, 
 			String shapeFilename, String zipFilename, 
-			String originalFilename) throws IOException, SchemaException, TatuException {
+			String originalFilename) throws IOException, SchemaException, TatuException, ParseException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(datFile)));
 		if(boolMArvotMukaan==true){

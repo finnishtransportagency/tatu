@@ -25,6 +25,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.LineSegment;
 import com.vividsolutions.jts.geom.MultiLineString;
 import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.util.Debug;
 
 import fi.liikennevirasto.tatu.TatuGeometry.Error;
@@ -61,7 +62,7 @@ public class OsoiteverkkoServiceImpl implements OsoiteverkkoService {
 
 	@Override
 	public TatuLineGeometry getTieosoitevaliAsGeometry(int tie, int aosa,
-			double aet, int losa, double let, Integer ajorata) {
+			double aet, int losa, double let, Integer ajorata) throws ParseException {
 		//Alkuperäinen sisältö kommentoitu pois, kutsuu muokattua versiota offsetilla 0.
 		return getTieosoitevaliAsGeometry(tie, aosa, aet, losa, let, ajorata, 0);
 		
@@ -74,7 +75,7 @@ public class OsoiteverkkoServiceImpl implements OsoiteverkkoService {
 	//		double aet, int losa, double let, int ajorata) {
 	@Override
 	public TatuLineGeometry getTieosoitevaliAsGeometry(int tie, int aosa,
-			double aet, int losa, double let, Integer ajorata, int offset) {
+			double aet, int losa, double let, Integer ajorata, int offset) throws ParseException {
 
 		boolean aosaFound = false;
 		boolean losaFound = false;
@@ -329,7 +330,7 @@ public class OsoiteverkkoServiceImpl implements OsoiteverkkoService {
 
 	@Override
 	public TatuPointGeometry getTieosoiteAsPoint(int tie, int osa, double et,
-			Integer ajorata) {
+			Integer ajorata) throws ParseException {
 		return getTieosoiteAsPoint(tie, osa, et, ajorata, 0);
 
 	}
@@ -337,7 +338,7 @@ public class OsoiteverkkoServiceImpl implements OsoiteverkkoService {
 	//Uusi versio jossa offset
 	@Override
 	public TatuPointGeometry getTieosoiteAsPoint(int tie, int osa, double et,
-			Integer ajorata, int offset) {
+			Integer ajorata, int offset) throws ParseException {
 
         List<Tieosa> tieosoitevali = getTieosoitevali(tie);
         if (tieosoitevali == null || tieosoitevali.size() == 0)

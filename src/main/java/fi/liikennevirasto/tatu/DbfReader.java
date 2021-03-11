@@ -12,6 +12,7 @@ import org.geotools.feature.SchemaException;
 import com.linuxense.javadbf.DBFException;
 import com.linuxense.javadbf.DBFField;
 import com.linuxense.javadbf.DBFReader;
+import com.vividsolutions.jts.io.ParseException;
 
 import fi.liikennevirasto.tatu.service.OsoiteverkkoService;
 
@@ -21,7 +22,7 @@ public class DbfReader extends TatuFileReader implements TatuReader {
 	public static Boolean boolMArvotMukaan = false;
 	
 	public ReaderResponse readFile(OsoiteverkkoService osoiteverkkoService, File dbfFile, 
-			String shapeFilename, String zipFilename, String originalFilename) throws IOException, TatuException, SchemaException {
+			String shapeFilename, String zipFilename, String originalFilename) throws IOException, TatuException, SchemaException, ParseException {
 
 		FileInputStream inputStream = new FileInputStream(dbfFile); 
 		

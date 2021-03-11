@@ -39,6 +39,7 @@ import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.MultiLineString;
 import com.vividsolutions.jts.geom.MultiPoint;
 import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.io.ParseException;
 
 import org.hibernate.spatial.jts.mgeom.MCoordinate;
 
@@ -85,7 +86,7 @@ public class ShapeWriter {
 	}
 	
 	public void writeLine(OsoiteverkkoService osoiteverkkoService, List<KuvDefinition> kuvDefs, 
-			TatuRow tatuRow) throws IOException, SchemaException, TatuException {
+			TatuRow tatuRow) throws IOException, SchemaException, TatuException, ParseException {
 		
         TatuGeometry tatuGeometry = tatuRow.getTatuGeometry(osoiteverkkoService);
         

@@ -121,14 +121,32 @@
 					<artifactId>postgis-jdbc</artifactId>
 					<groupId>org.postgis</groupId>
 				</exclusion>
-			</exclusions> 
+			</exclusions>
 		</dependency>
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+   			<artifactId>hibernate-core</artifactId>
+    		<version>4.0.0.Final</version>
+		</dependency>
+		<!--
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-spatial</artifactId>
+    		<version>4.0-M1</version>
+		</dependency>
+		-->
 		<dependency>
 			<groupId>org.postgis</groupId>
 			<artifactId>postgis-jdbc</artifactId>
 			<version>1.5.2</version>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.hibernatespatial</groupId>
+            <artifactId>hibernate-spatial-postgis</artifactId>
+            <version>1.1</version>
+        </dependency>
         
 		<!-- Basic datasource needs this in jetty-env.xml -->
 		<dependency>

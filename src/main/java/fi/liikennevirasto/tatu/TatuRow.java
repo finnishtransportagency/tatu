@@ -2,6 +2,8 @@ package fi.liikennevirasto.tatu;
 
 import java.util.ArrayList;
 
+import com.vividsolutions.jts.io.ParseException;
+
 import fi.liikennevirasto.tatu.KuvDefinition.Tyyppi;
 import fi.liikennevirasto.tatu.TatuGeometry.Error;
 import fi.liikennevirasto.tatu.service.OsoiteverkkoService;
@@ -90,7 +92,7 @@ public class TatuRow {
 		return (!(aosa.compareTo(losa) == 0 && aet.compareTo(let) == 0));
 	}
 
-	public TatuGeometry getTatuGeometry(OsoiteverkkoService osoiteverkkoService) {
+	public TatuGeometry getTatuGeometry(OsoiteverkkoService osoiteverkkoService) throws ParseException {
 		if (!isValidAddress())
 			return new TatuPointGeometry(null, Error.INVALID_ADDRESS);
 		if (isLine())

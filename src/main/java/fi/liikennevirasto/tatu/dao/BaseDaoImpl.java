@@ -30,7 +30,7 @@ public class BaseDaoImpl {
 	@SuppressWarnings("rawtypes")
 	List executeQuery(DetachedCriteria criteria) {
 		Criteria ec = criteria.getExecutableCriteria(sessionFactory.getCurrentSession());
-		ec.setCacheable(true);
+		//ec.setCacheable(true);
 		return ec.list();
 	}
 	

@@ -44,7 +44,13 @@ public class CsvReader extends TatuFileReader implements TatuReader {
 		List<String> row = null;
 		while ((row = mapReader.read()) != null) {
 			
-			if (mapReader.length() != header.length) {
+			System.out.println(mapReader.length());
+			System.out.println(header.length);
+			System.out.println(mapReader.length() == header.length);
+			System.out.println(header);
+			System.out.println(row);
+			
+			if (!(mapReader.length() == header.length)) {
 				logger.debug("Virheellinen rivi: "+row);
 				throw new TatuException("Seuraava rivi on virheellinen: " +row);
 			}

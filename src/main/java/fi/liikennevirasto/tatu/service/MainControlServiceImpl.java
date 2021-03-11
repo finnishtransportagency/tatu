@@ -19,6 +19,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.vividsolutions.jts.io.ParseException;
+
 import fi.liikennevirasto.tatu.CsvReader;
 import fi.liikennevirasto.tatu.DatReader;
 import fi.liikennevirasto.tatu.DbfReader;
@@ -283,7 +285,7 @@ public class MainControlServiceImpl implements MainControlService {
 		return null;
 	}
 
-	private void processFiles(Process process) throws TatuException {
+	private void processFiles(Process process) throws TatuException, ParseException {
 		process.setStatus(Status.RUNNING.intValue);
 		processDao.updateProcess(process);
 		
